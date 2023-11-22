@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head> 
+<body style="overflow: hidden">
+    <h1>Menu</h1>
+    <form action="/join_game" method="post" onsubmit="return validateForm()">
+        <label for="player_name">Nom du joueur(p1) :</label>
+        <input type="text" name="player_name" id="player_name" required>
+        <label for="enemy_name">Nom du joueur(p2) :</label>
+        <input type="text" name="enemy_name" id="enemy_name" required>
+        <button type="submit">Rejoindre le jeu</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var player_name = document.getElementById('player_name').value;
+            var enemy_name = document.getElementById('enemy_name').value;
+
+            if (player_name && enemy_name) {
+                return true;
+            } else {
+                alert("Veuillez entrer les deux noms de joueurs.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
